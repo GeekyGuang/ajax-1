@@ -4,7 +4,7 @@ let n = 1
 
 getPage.onclick = ()=>{
     const request = new XMLHttpRequest()
-    request.open('GET', `page${n+1}.json`)
+    request.open('GET', `/page${n+1}.json`)
     request.onreadystatechange = ()=>{
         if(request.readyState === 4 && request.status === 200) {
             const array = JSON.parse(request.response)
@@ -21,7 +21,7 @@ getPage.onclick = ()=>{
 
 getJSON.onclick = () => {
     const request = new XMLHttpRequest()
-    request.open('GET', '5.json')
+    request.open('GET', '/5.json')
     request.onreadystatechange = ()=>{
         if(request.readyState === 4 && request.status === 200){
             console.log(request.response)
@@ -35,7 +35,7 @@ getJSON.onclick = () => {
 
 getXML.onclick = () => {
     const request = new XMLHttpRequest()
-    request.open('GET', '4.xml')
+    request.open('GET', '/4.xml')
     request.onreadystatechange = ()=>{
         if(request.readyState === 4) {
             if (request.status >= 200 && request.status < 300) {
@@ -53,7 +53,7 @@ getXML.onclick = () => {
 
 getHTML.onclick = () => {
     const request = new XMLHttpRequest()
-    request.open('GET', '3.html')
+    request.open('GET', '/3.html')
     request.onreadystatechange = ()=>{
         if(request.readyState === 4) {
             // 4表示完成，但不知道成功还是失败
@@ -74,7 +74,7 @@ getHTML.onclick = () => {
 
 getJS.onclick = () => {
   const request = new XMLHttpRequest()
-  request.open('GET', '2.js')
+  request.open('GET', '/2.js')
   request.onreadystatechange = ()=>{
       if(request.readyState === 4) {
         if (request.status >= 200 && request.status < 300) {
@@ -95,7 +95,7 @@ getCSS.onclick = () => {
     // 1. 创建HttpRequest()对象
     const request = new XMLHttpRequest()
     // 2. 调用对象的open方法，只传2个参数
-    request.open('GET', 'style.css')
+    request.open('GET', '/style.css')
     // 3. 监听onload和onerror事件
     request.onreadystatechange = ()=>{
         if(request.readyState === 4) {
